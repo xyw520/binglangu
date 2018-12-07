@@ -1,0 +1,53 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item logo" href="">
+            LOGO
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+
+              
+            <a class="navbar-item">
+                首页
+            </a>
+           
+
+            {{each nav}}
+            <a class="navbar-item" href=" {{$value.url}}">
+                    {{$value.title}}
+            </a>
+            {{/each}}
+           
+        </div>
+
+
+    </div>
+</nav>
+
+<script>
+     jQuery(document).ready(function ($) {
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function () {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+        });
+        
+        $('#p1').click(function () {
+            $('#p1').addClass('animated fadeInUp');
+            setTimeout(function () {
+                $('#p1').removeClass('animated fadeInUp')
+            }, 1000)
+
+        })
+
+     });
+</script>

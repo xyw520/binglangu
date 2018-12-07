@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>list-info</title>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+<div class="list-info">
+    <div class="container">
+        <div class="row">
+            <h4>
+                <i class="fa fa-home fa-3x"></i>
+                <span>当前位置：</span> 首页 » 浮雕装饰画
+            </h4>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-8 con">
+                <h2>标题</h2>
+                <ul>
+                    <li>来源：xx</li>
+                    <li>浏览：xx</li>
+                    <li>发布日期：2018-08-08 17:41:01</li>
+                    <li>【
+                        <a href="" value="l">大</a>
+                        <a href="" value="m">中</a>
+                        <a href="" value="s">小</a>
+                        】
+                    </li>
+                </ul>
+
+                <div class="context">
+                    客厅作为居家的“门面”，其装修风格非常重要，为此，很多用户都会选择在客厅墙面上选择一些画来装饰，这样墙面就显得不那么单调，使得居室更加丰富，那客厅装饰画有哪些类别呢？温菲尔小编告诉您。
+
+                    1、如果按照展现的形式来划分的话，可以分为有框的装饰和无框的装饰这两种，通常来说有框装饰后的画作看起来会更加的正式典雅，符合古典和传统的装修，而且画框具备多变的风格，显得富丽堂皇。而无框画使可以使画作表现出时尚、现代的个性，适合简约的装修风格。
+                </div>
+                <!--选择字体大小-->
+                <script>
+                    $(function () {
+                        $(".list-info .con ul li a").each(function () {
+                            $(this).click(function () {
+                                var v = $(this).attr("value");
+                                var objDiv = $(this).parent().parent().next();
+                                if (v == 'l') {
+                                    objDiv.css("font-size", "24px");
+                                    return false;
+                                }
+                                if (v == 'm') {
+                                    objDiv.css("font-size", "18px");
+                                    return false;
+                                }
+                                if (v == 's') {
+                                    objDiv.css("font-size", "14px");
+                                    return false;
+                                }
+                            })
+                        });
+                    })
+
+                </script>
+            </div>
+
+            <div class="col-md-4"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

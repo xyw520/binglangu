@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{include 'default/inc/header.html'}}
+
+    <link rel="stylesheet" href="{{__HOST__}}/default/css/columnWrap.css">
+    <!-- 首页轮播需要 -->
+    <link rel="stylesheet" href="{{__HOST__}}/default/css/jqSangar/sangarSlider.css" type="text/css">
+    <link rel="stylesheet" href="{{__HOST__}}/default/css/jqSangar/default.css" type="text/css">
+
+    <!-- <script type="text/javascript" src="js/jquery-migrate.min.js"></script> -->
+    <script type="text/javascript" src="{{__HOST__}}/default/js/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="{{__HOST__}}/default/js/imagesloaded.min.js"></script>
+    <script type="text/javascript" src="{{__HOST__}}/default/js/sangarSlider.js"></script>
+    <!-- 首页轮播需要 -->
+
+    <title>index</title>
+
+</head>
+
+<body>
+
+    <div class='page'>
+
+        <div class='pagecontent'>
+
+            {{include 'default/inc/nav.html'}}
+
+            <div class='sangar-slideshow-container' id='sangar-example'>
+                <div class='sangar-content-wrapper' style='display:none;'>
+
+                    {{each focus}}
+                    <div class='sangar-content'>
+                        <img src='{{$value.pic}}' alt="{{$value.title}}"/>
+                        <a href='{{$value.url}}' target="_blank"></a>
+                        <div class="sangar-textbox">
+                            <div class="sangar-textbox-inner sangar-position-bottom">
+                                <div class="sangar-textbox-content">
+                                    <p class="sangar-slide-title" style="color:#ffffff;font-size:1rem;text-align:center;">{{$value.desc}}</p>
+                                    <div style="color:#ffffff;text-align:center;">
+                                        <!-- <p>Slide with button is here</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{/each}}
+
+                    <div class='sangar-content'>
+                        <video class="sangar-slide-video" style="width:100%;" preload="none">
+                            <source src="default/video/b.mp4" type="video/mp4"> 你的浏览器不支持 HTML5 video.
+                        </video>
+                        <a href='http://github.com'></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="case2 wrapBg">
+                <div class="container is-fluid ">
+                    <div class="titleWrap">
+                        <nav class="level">
+                            <p class="level-item has-text-centered">
+                                <a class="title link is-info">{{cate[0].title}}</a>
+                            </p>
+                        </nav>
+                        <nav class="level">
+                            <p class="level-item has-text-centered">
+                                <a class="subtitle link is-info flex">
+                                    <i></i>{{cate[0].description}}
+                                    <i></i>
+                                </a>
+                            </p>
+                        </nav>
+                    </div>
+
+                    <div class="columnWrap">
+
+                        <div class="columns ">
+                            {{each article[0]}}
+                            <div class="column ">
+                                <div>
+                                    <a href="">
+                                        <figure class="image is-5by3">
+                                            <img src="{{$value.img_url}}">
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="title-wrap">
+                                    <a href="" class="title">{{$value.title}}</a>
+                                </div>
+                                <div class="tiao"></div>
+                            </div>
+
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+
+                    <div class="btnWrap">
+                        <a href="">
+                            <button class="mbtn">查看更多</button>
+                        </a>
+                        &nbsp;
+                        <a>
+                            <button class="mbtn" onclick="orderRoom()">立即预定</button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 特色农家乐 -->
+            <div class="case">
+
+                <div class="container is-fluid">
+                    <div class="titleWrap">
+                        <nav class="level">
+                            <p class="level-item has-text-centered">
+                                <a class="title link is-info">{{cate[1].title}}</a>
+                            </p>
+                        </nav>
+                        <nav class="level">
+                            <p class="level-item has-text-centered">
+                                <a class="subtitle link is-info flex">
+                                    <i></i>{{cate[1].description}}
+                                    <i></i>
+                                </a>
+                            </p>
+                        </nav>
+                    </div>
+
+                    <div class="columnWrap1">
+
+                        <div class="columns ">
+                                {{each article[1]}}
+                            <div class="column ">
+                                <div>
+                                    <a href="">
+                                        <figure class="image is-5by4">
+                                            <img src="{{$value.img_url}}">
+
+                                        </figure>
+
+                                    </a>
+
+                                    <div class="title-wrap">
+                                        <a href="" class="title">{{$value.title}}</a>
+                                        <div class="description"> {{$value.description}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+
+                    <div class="btnWrap">
+                        <a href="">
+                            <button class="mbtn">查看更多</button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Hero title
+                        </h1>
+                        <h2 class="subtitle">
+                            Hero subtitle
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <div class="case3">
+                <div class="container is-fluid ">
+                    <div class="titleWrap">
+                        <nav class="level">
+                            <p class="level-item has-text-centered">
+                                <a class="title link is-info">{{cate[3].title}}</a>
+                            </p>
+                        </nav>
+                        <nav class="level">
+                            <p class="level-item has-text-centered">
+                                <a class="subtitle link is-info flex">
+                                    <i></i>{{cate[3].description}}
+                                    <i></i>
+                                </a>
+                            </p>
+                        </nav>
+                    </div>
+
+                    <div class="columnWrap3">
+
+                        <div class="columns ">
+                            {{each article[3]}}
+                            <div class="column ">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{{$value.img_url}}" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+
+                                            <div class="media-content">
+                                                <p class="title is-4">{{$value.title}}</p>
+                                                <p class="subtitle is-6">编辑：{{$value.author}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                                {{$value.description}}
+                                            <a>查看详情</a>
+                                            <br>
+                                            <time datetime="2016-1-1">{{$value.add_time | dateFormat}} </time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{/each}}
+                           
+
+                        </div>
+
+                        
+
+                        <div class="btnWrap">
+                            <a href="">
+                                <button class="mbtn">查看更多</button>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        {{include 'default/inc/footer.html'}}
+
+            <div class="modal" id='orderInfo'>
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <p class="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
+                    </p>
+                    <p style='color: #ffffff;text-align: center'>
+                        扫描二维码添加微信，私聊老板预约房间
+                    </p>
+                    <p style='color: #ffffff;text-align: center'>
+                        联系电话：18874408888
+                    </p>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+            <!-- <div class="mobile-nav">
+            <div>
+                <div class="navitem">1</div>
+                <div class="navitem">2</div>
+                <div class="navitem">3</div>
+                <div class="navitem">4</div>
+            </div>
+      </div> -->
+
+
+
+
+        </div>
+
+        {{include 'default/inc/mobile-nav.html'}}
+
+    </div>
+
+
+
+</body>
+
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=OESBZ-OCU62-2SQUU-CSQCE-7WHLT-DGF7X"></script>
+<script>
+
+    window.onload = function () {
+        //直接加载地图
+        //初始化地图函数  自定义函数名init
+        function init() {
+            //定义map变量 调用 qq.maps.Map() 构造函数   获取地图显示容器
+            var map = new qq.maps.Map(document.getElementById("allmap"), {
+                center: new qq.maps.LatLng(39.916527, 116.397128),      // 地图的中心地理坐标。
+                zoom: 8                                                 // 地图的中心地理坐标。
+            });
+        }
+
+        //调用初始化函数地图
+        init();
+
+    }
+</script>
+
+<!-- 
+<script src='node_modules/jquery/dist/jquery.min.js'></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");    // 创建Map实例
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+	//添加地图类型控件
+	map.addControl(new BMap.MapTypeControl({
+		mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));	  
+	map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script> -->
+
+<script>
+    jQuery(document).ready(function ($) {
+        // Check for click events on the navbar burger icon
+
+        window.onscroll = function () {
+            //变量t是滚动条滚动时，距离顶部的距离
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            var top = (typeof window.pageYOffset != 'undefined' ? window.pageYOffset : typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat' ? document.documentElement.scrollTop : typeof document.body != 'undefined' ? document.body.scrollTop : "");
+            if (t > 200 && t < 230) {
+
+                $('#p1').addClass('animated fadeInLeftBig');
+
+                setTimeout(function () {
+                    $('#p1').removeClass('animated fadeInLeftBig')
+                }, 1000)
+            }
+        }
+    });
+
+    function orderRoom() {
+        document.getElementById('orderInfo').classList.add("is-active")
+    }
+
+    document.querySelector('.modal-close').addEventListener('click', function () {
+        this.parentNode.classList.remove("is-active")
+    })
+
+</script>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $('#sangar-example').sangarSlider({
+            timer: false, // true or false to have the timer
+            width: 1250, // slideshow width
+            height: 500, // slideshow height
+            // fixedHeight: true,
+            scaleSlide: true // s
+
+        });
+    })
+</script>
+
+</html>

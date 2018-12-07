@@ -1,0 +1,152 @@
+.columns{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.columns .column div{
+    overflow: hidden;
+    
+}
+
+.columnWrap .columns .column:hover div{
+    box-shadow: 0px 0px 10px 0px  rgb(10, 138, 138);
+    
+}
+
+.columnWrap .columns .column:hover div a.title{
+    color:#15a169
+}
+
+
+.columnWrap .columns .column .title-wrap{
+    padding: 1rem;
+}
+
+.columnWrap .columns .column .title{
+    font-size: 2.5vh;
+    margin-left: 1rem;
+    color: #77d1ad
+}
+
+
+.columnWrap .columns .column div.tiao{
+    width: 0%;
+    height: 3px;
+    background-color: #77d1ad;
+    transition:1s
+}
+
+.columnWrap .columns .column:hover div.tiao{
+    width: 100%;
+    height: 3px;
+    background-color:  #15a169;
+    transition:1s
+}
+
+
+.columnWrap .columns .column img:hover{
+    transition: transform .5s ease,-webkit-transform .5s ease;
+    transform: scale(1.1);
+}
+
+.columnWrap .columns .column img{
+    transition: transform .5s ease,-webkit-transform .5s ease;
+}
+
+
+/* -------------------------- */
+
+.columnWrap1 .columns>div{
+    position: relative;
+}
+
+.columnWrap1 .columns .title-wrap{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-color: rgba(41, 35, 35, 0.5);
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    transition: .5s;
+    /* height: 4rem;
+    overflow: hidden; */
+}
+
+.columnWrap1 .columns .column{
+    padding: 0;
+    margin: .75rem;
+}
+
+.columnWrap1 .columns .title-wrap .title{
+    font-size: 1.3rem;
+    color: white;
+    transition: .5s;
+}
+
+.columnWrap1 .columns .column:hover .title-wrap{
+    transition: .5s;
+    background-color: rgba(8, 7, 7, 0.5);
+    
+}
+
+.columnWrap1 .columns .column:hover .title{
+    transition: .5s;
+}
+
+.columnWrap1 .columns .column .description{ 
+   
+    height: 0;
+    transition: .5s;
+}
+
+.columnWrap1 .columns .column:hover  .description{
+    height: 3rem;
+    transition: .3s;
+    margin-top: 1rem;
+}
+
+
+/* --------------------------------- */
+
+
+
+@media (min-width:  768px) { 
+    .card{
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items:stretch
+    }
+    
+    .card .card-image{
+        /* border: 1px solid red; */
+        /* order:2; */
+        width: 70%;
+        
+    }
+    
+    .card .card-content{
+        /* border: 1px solid blue; */
+        /* order:1; */
+        width: 100%;
+    }
+    
+ }
+
+ .card{
+     box-shadow: none   ;
+     transition:.5s;
+ }
+
+ .card:hover{
+    box-shadow: 0px 0px 10px 0px #77d1ad;
+    transition:.5s;
+ }
+
+ .card .title{
+     color: var(--tc)
+ }

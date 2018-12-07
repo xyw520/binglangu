@@ -1,0 +1,83 @@
+
+
+
+
+
+.hero.is-fullheight{
+    min-height: 80vh;
+}
+
+.wrapBg{
+    background-image: url(../images/wrapBg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem
+}
+
+.hero {
+    background: black url(../images/b1.jpg) center / cover;
+    margin-top: 6vh;
+    /* margin-bottom: 3rem; */
+}
+
+
+
+
+ .sangar-textbox-content{
+   width:60%;
+   background-color: rgba(100, 100, 100, .5);
+   /* padding: 6vh 6vw */
+ }
+
+ .fo {
+     background-color: rgb(24, 32, 31);
+     padding-top: 5rem;
+     padding-bottom: 3rem
+ }
+ .fo .columns{
+     /* border:1px solid blue; */
+ }
+
+ .fo .columns .column{
+     /* border: 1px solid red */
+   
+ }
+
+ .fo .columns .left :not(:first-child){
+    color: white;
+    margin-top: 2rem;
+}
+
+.fo .columns .left .title{
+    font-size: 1.5rem;font-weight: bold;color:var(--tc)
+}
+
+.fo .link span{
+    color: white
+}
+
+.fo .link a{
+    color: white
+}
+
+.fo .has-text-centered{
+    padding-top: 3rem
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
