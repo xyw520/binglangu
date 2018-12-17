@@ -1,0 +1,15 @@
+./mongoimport -d admin -c user --file ../../../../home/binglangu/db/user.json
+
+./mongoimport -u xyw -p 854708 --authenticationDatabase=mywebsite -d mywebsite-c user --file ../../../../home/binglangu/db/user.json
+
+./mongoimport -u xyw -p 854708 --authenticationDatabase=mywebsite -d mywebsite-c user --file ../../../../../home/binglangu/db/user.json
+
+./mongoimport --host 127.0.0.1--port 27017 -u xyw -p 854708 --authenticationDatabase=mywebsite -d mywebsite -c user --type csv  --fields username,pwd,last_time,status --file /home/binglangu/db/user.json
+
+/home/binglangu/db
+
+/usr/local/mongodb/bin
+
+
+
+mongoimport -d admin -c link2 --type json --file C:\Users\Administrator\Desktop\gitdemo\binglangu\db\link.json

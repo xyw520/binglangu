@@ -2,22 +2,13 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{include 'default/inc/header.html'}}
+
     <title>info</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
-    <link rel="stylesheet" href="css/columnWrap.css">
-    <link rel="stylesheet" href="css/base.css">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <!-- <link rel="stylesheet" href="styles/debug.css"> -->
     <style>
-       
-
-
-         .main .container .info{
-             background-color: white
-         }
+        .main .container .info {
+            background-color: white
+        }
 
         .main .container .info .title {
             margin-bottom: 2rem;
@@ -45,57 +36,7 @@
     <div class='page'>
 
         <div class='pagecontent'>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item logo" href="">
-                        LOGO
-                    </a>
-
-                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item">
-                            首页
-                        </a>
-
-                        <a class="navbar-item">
-                            分类一
-                        </a>
-
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                分类一
-                            </a>
-
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                                <hr class="navbar-divider">
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </nav>
-
-
+            {{include 'default/inc/nav.html'}}
 
             <!-- .hero -->
             <div class="listbg">
@@ -106,127 +47,46 @@
             <!-- /.hero -->
 
             <div class="main">
-                  
-                    <div class="container">
-                <div class="columns ">
-                    <div class="column is-four-fifths">
-                        <!-- <div class="container"> -->
+
+                <div class="container">
+                    <div class="columns ">
+                        <div class="column is-four-fifths">
+                            <!-- <div class="container"> -->
                             <div class="info">
                                 <section class="hero infotitle">
                                     <div class="hero-body">
-                                            <h1 class="title">
-                                                亲子拓展活动
-                                            </h1>
-                                            <h2 class="subtitle">
-                                                2018-01-26 16:45:21
-                                            </h2>
+                                        <h1 class="title">
+                                            {{content.title}}
+                                        </h1>
+                                        <h2 class="subtitle">
+                                            {{content.add_time|dateFormat}}
+                                        </h2>
                                     </div>
                                 </section>
 
                                 <section class="hero infocontent">
                                     <div class="hero-body">
-                                        2016年元月3日，长郡中学1411班全体同学和部分家长开展了新年拓展活动、因为同学们下午4点还有参加课外辅导，拓展活动紧张而刺激，同学们的积极性和集体荣誉感很高，家长也很配合，穿越火线、引爆气球、人椅、大脚板、撕名牌，没在胜利前骄傲也没有在失败中气馁。尤其是丛林真人CS野战让活动到达了高潮！
+                                        {{@content.content}}
                                     </div>
                                 </section>
 
                             </div>
-                        <!-- </div> -->
-                    </div>
-                    <div class="column ">
-                        <div class="nav-right">
-                            <div class="wrap">
-                                <div>
-                                    <h1 class="title is-5">精品推荐</h1>
-                                </div>
-                                <div><a href="">好玩的地方在哪里？哪里？哪</a></div>
-                                <div><a href="">好玩的地方在哪里？哪地方在</a></div>
-                                <div><a href="">好玩的地方在哪里？哪地方在</a></div>
-                                <div><a href="">好玩的地方在哪里？哪</a></div>
-                                <div><a href="">好玩的地方在哪里？哪</a></div>
-                                <div><a href="">好玩的地方在哪里？哪</a></div>
-                            </div>
+                            <!-- </div> -->
                         </div>
+                        {{include 'default/inc/side.html'}}
                     </div>
                 </div>
-            </div>
 
             </div>
         </div>
 
-            <div class="mobile-nav">
-                <div class="columns is-mobile">
-                    <div class="column">首页</div>
-                    <div class="column">攻略</div>
-                    <div class="column">酒店</div>
-                    <div class="column">预定</div>
-                    <div class="column"><a href="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:39.96554,116.26719;title:成都;addr:北京市海淀区复兴路32号院|coord:39.87803,116.19025;title:成都园;addr:北京市丰台区射击场路15号北京园博园|coord:39.88129,116.27062;title:老成都;addr:北京市丰台区岳各庄梅市口路西府景园六号楼底商|coord:39.9982,116.19015;title:北京园博园成都园;addr:北京市丰台区园博园内&key=OESBZ-OCU62-2SQUU-CSQCE-7WHLT-DGF7X&referer=myapp">地图</a></div>
-                </div>
-            </div>
-        </div>
+        {{include 'default/inc/mobile-nav.html'}}
+    </div>
 
 
 
 
 </body>
 
-<script>
-
-     jQuery(document).ready(function ($) {
-
-// Check for click events on the navbar burger icon
-$(".navbar-burger").click(function () {
-
-    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    $(".navbar-burger").toggleClass("is-active");
-    $(".navbar-menu").toggleClass("is-active");
-
-});
-
-
-$('#p1').click(function () {
-    // alert(1)
-
-    $('#p1').addClass('animated fadeInUp');
-
-    setTimeout(function () {
-        $('#p1').removeClass('animated fadeInUp')
-    }, 1000)
-
-
-})
-
-
-window.onscroll = function () {
-    //变量t是滚动条滚动时，距离顶部的距离
-    var t = document.documentElement.scrollTop || document.body.scrollTop;
-    var top = (typeof window.pageYOffset != 'undefined' ? window.pageYOffset : typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat' ? document.documentElement.scrollTop : typeof document.body != 'undefined' ? document.body.scrollTop : "");
-    // console.log(t)
-    // console.log(top);
-
-    if (t > 200 && t < 230) {
-        // alert(2)
-
-
-        $('#p1').addClass('animated fadeInLeftBig');
-
-        setTimeout(function () {
-            $('#p1').removeClass('animated fadeInLeftBig')
-        }, 1000)
-
-
-
-    }
-
-
-}
-
-console.log($(window).height())
-
-
-
-
-});
-
-</script>
 
 </html>

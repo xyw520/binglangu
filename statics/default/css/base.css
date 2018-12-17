@@ -36,6 +36,16 @@ a{
   cursor: pointer
 }
 
+.mobile-nav a{
+    color:  #777;
+  
+}
+
+.mobile-nav a.active{
+    color: #77d1ad;
+  
+}
+
 a:hover{
     color:  #77d1ad;
 }
@@ -65,6 +75,15 @@ body{
     height: 3px;
     width: 20px;
     margin-top: 3px
+}
+
+.navbar-start a.active{
+    background-color: #77d1ad;
+    color: white
+}
+
+.navbar{
+    box-shadow: none
 }
 
 
@@ -239,6 +258,48 @@ a.logo{
         /* margin-bottom: 20px */
         display: block
     }
+}
+
+/* ----------footer------------ */
+
+
+.fo {
+    background-color: rgb(24, 32, 31);
+    padding-top: 5rem;
+    padding-bottom: 3rem
+}
+.fo .columns{
+    /* border:1px solid blue; */
+}
+
+.fo .columns .column{
+    /* border: 1px solid red */
+  
+}
+
+.fo .columns .left :not(:first-child){
+   color: white;
+   margin-top: 2rem;
+}
+
+.fo .columns .left .title{
+   font-size: 1.5rem;font-weight: bold;color:var(--tc)
+}
+
+.fo .link span{
+   color: white
+}
+
+.fo .link a{
+   color: white
+}
+
+.fo .has-text-centered{
+   padding-top: 3rem
+}
+
+.fo strong{
+    color:#777;
 }
 
 

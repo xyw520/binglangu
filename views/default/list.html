@@ -2,12 +2,9 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{include 'default/inc/header.html'}}
+
     <title>list</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
-    <link rel="stylesheet" href="css/columnWrap.css">
-    <link rel="stylesheet" href="./css/base.css">
     <style>
 
         @media (min-width: 768px) {
@@ -38,6 +35,10 @@
         .columnWrap3{
             background-color: white;
         }
+
+        .columns:last-child{
+            margin-bottom: 0
+        }
     </style>
 </head>
 
@@ -46,56 +47,7 @@
     <div class='page'>
 
         <div class='pagecontent'>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item logo" href="">
-                        LOGO
-                    </a>
-
-                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item">
-                            首页
-                        </a>
-
-                        <a class="navbar-item">
-                            分类一
-                        </a>
-
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                分类一
-                            </a>
-
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                                <hr class="navbar-divider">
-                                <a class="navbar-item">
-                                    分类一
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </nav>
-
+            {{include 'default/inc/nav.html'}}
 
 
             <!-- .hero -->
@@ -112,129 +64,56 @@
                     <div class="column is-four-fifths">
                             <div class="columnWrap3">
 
+                                {{each list}}
                                 <div class="columns ">
 
                                     <div class="column ">
                                         <div class="card">
                                             <div class="card-image">
                                                 <figure class="image is-4by3">
-                                                    <img src="images/wrapBg.jpg" alt="Placeholder image">
+                                                    <img src="{{$value.img_url}}" alt="{{$value.title}}">
                                                 </figure>
                                             </div>
                                             <div class="card-content">
                                                 <div class="media">
 
                                                     <div class="media-content">
-                                                        <p class="title is-4">假期怎么玩？欢乐农家乐欢迎您！</p>
-                                                        <p class="subtitle is-6">@xxxx</p>
+                                                        <p class="title is-4">{{$value.title}}</p>
+                                                        <p class="subtitle is-6">@{{$value.author}}</p>
                                                     </div>
                                                 </div>
 
                                                 <div class="content">
-                                                    怎么玩？最有趣的地方在哪里？最好玩的地方在哪里？哪里是最好的爱旅行？去欢乐农家乐在一个炎热的夏天，这... <a>查看详情</a>
-                                                    <a href="#">#xxx</a> <a href="#">#xxxxx</a>
+                                                   {{$value.description}}... <a href="/info/{{@$value._id}}">查看详情</a>
+                                                    <!-- <a href="#">#xxx</a> <a href="#">#xxxxx</a> -->
                                                     <br>
-                                                    <time datetime="2016-1-1">2018-01-26 </time>
+                                                    <time datetime="2016-1-1">{{$value.add_time|dateFormat}}</time>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="columns ">
-
-                                    <div class="column ">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <figure class="image is-4by3">
-                                                    <img src="images/wrapBg.jpg" alt="Placeholder image">
-                                                </figure>
-                                            </div>
-                                            <div class="card-content">
-                                                <div class="media">
-
-                                                    <div class="media-content">
-                                                        <p class="title is-4">假期怎么玩？欢乐农家乐欢迎您！</p>
-                                                        <p class="subtitle is-6">@xxxx</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="content">
-                                                    怎么玩？最有趣的地方在哪里？最好玩的地方在哪里？哪里是最好的爱旅行？去欢乐农家乐在一个炎热的夏天，这... <a>查看详情</a>
-                                                    <a href="#">#xxx</a> <a href="#">#xxxxx</a>
-                                                    <br>
-                                                    <time datetime="2016-1-1">2018-01-26 </time>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="columns ">
-
-                                    <div class="column ">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <figure class="image is-4by3">
-                                                    <img src="images/wrapBg.jpg" alt="Placeholder image">
-                                                </figure>
-                                            </div>
-                                            <div class="card-content">
-                                                <div class="media">
-
-                                                    <div class="media-content">
-                                                        <p class="title is-4">假期怎么玩？欢乐农家乐欢迎您！</p>
-                                                        <p class="subtitle is-6">@xxxx</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="content">
-                                                    怎么玩？最有趣的地方在哪里？最好玩的地方在哪里？哪里是最好的爱旅行？去欢乐农家乐在一个炎热的夏天，这... <a>查看详情</a>
-                                                    <a href="#">#xxx</a> <a href="#">#xxxxx</a>
-                                                    <br>
-                                                    <time datetime="2016-1-1">2018-01-26 </time>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
+                                {{/each}}
 
                             </div>
                     </div>
-                    <div class="column ">
-                        <div class="nav-right">
-                            <div class="wrap">
-                                <div>
-                                    <h1 class="title is-5">精品推荐</h1>
-                                </div>
-                                <div><a href="">好玩的地方在哪里？哪里？哪</a></div>
-                                <div><a href="">好玩的地方在哪里？哪地方在</a></div>
-                                <div><a href="">好玩的地方在哪里？哪地方在</a></div>
-                                <div><a href="">好玩的地方在哪里？哪</a></div>
-                                <div><a href="">好玩的地方在哪里？哪</a></div>
-                                <div><a href="">好玩的地方在哪里？哪</a></div>
-                            </div>
-                        </div>
-                    </div>
+
+                    {{include 'default/inc/side.html'}}
+                    
                 </div>
 
             </div> </div>
 
+            {{include 'default/inc/footer.html'}}
+
 
         </div>
 
+       
+        
+        {{include 'default/inc/mobile-nav.html'}}
 
-        <div class="mobile-nav">
-            <div class="columns is-mobile">
-                <div class="column">首页</div>
-                <div class="column">攻略</div>
-                <div class="column">酒店</div>
-                <div class="column">预定</div>
-                <div class="column"><a href="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:39.96554,116.26719;title:成都;addr:北京市海淀区复兴路32号院|coord:39.87803,116.19025;title:成都园;addr:北京市丰台区射击场路15号北京园博园|coord:39.88129,116.27062;title:老成都;addr:北京市丰台区岳各庄梅市口路西府景园六号楼底商|coord:39.9982,116.19015;title:北京园博园成都园;addr:北京市丰台区园博园内&key=OESBZ-OCU62-2SQUU-CSQCE-7WHLT-DGF7X&referer=myapp">地图</a></div>
-            </div>
-        </div>
+       
     </div>
 
 

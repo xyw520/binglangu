@@ -15,13 +15,14 @@
         <div class="navbar-start">
 
               
-            <a class="navbar-item">
+            <a class="navbar-item"  href="{{__HOST__}}">
                 首页
             </a>
            
 
             {{each nav}}
-            <a class="navbar-item" href=" {{$value.url}}">
+            <a  {{if pathname==$value.url }} class="navbar-item active" 
+            {{else }} class="navbar-item" {{/if}}  href="{{$value.url}}">
                     {{$value.title}}
             </a>
             {{/each}}
