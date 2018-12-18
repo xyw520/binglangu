@@ -82,6 +82,11 @@ body{
     color: white
 }
 
+.navbar-start a:hover{
+    background-color: #77d1ad;
+    color: white
+}
+
 .navbar{
     box-shadow: none
 }

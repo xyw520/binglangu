@@ -22,7 +22,7 @@
 
             {{each nav}}
             <a  {{if pathname==$value.url }} class="navbar-item active" 
-            {{else }} class="navbar-item" {{/if}}  href="{{$value.url}}">
+            {{else }} class="navbar-item" {{/if}}  href="{{__HOST__}}/{{$value.url}}">
                     {{$value.title}}
             </a>
             {{/each}}

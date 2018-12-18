@@ -71,16 +71,47 @@ router.get('/gonglue', async (ctx) => {
     // });
 
     let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062de0e5c96b23843576d0' }, {}, {
-        sortJson: { 'sort': 1 }
+        sortJson:{
+            'sort':1
+        }
     });
 
-    console.log("articleGonglue:" + JSON.stringify(articleGonglue))
+    //db.article.find({},{title:1}).sort('sort':1)  查询指定字段，排序
+
+    // console.log("articleGonglue:" + JSON.stringify(articleGonglue))
 
     ctx.render('default/list', {
         list: articleGonglue,
         // nav:navResult,
     });
 
+})
+
+router.get('/hotel',async (ctx) => {
+    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062d89e5c96b23843576cd' }, {}, {
+        sortJson:{
+            'sort':1
+        }
+    });
+
+    ctx.render('default/list', {
+        list: articleGonglue,
+        // nav:navResult,
+    });
+
+})
+
+router.get('/food',async (ctx) => {
+    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062daae5c96b23843576ce' }, {}, {
+        sortJson:{
+            'sort':1
+        }
+    });
+
+    ctx.render('default/list', {
+        list: articleGonglue,
+        // nav:navResult,
+    });
 
 })
 
@@ -89,9 +120,7 @@ router.get('/about', (ctx) => {
     ctx.body = '关于我们'
 })
 
-router.get('/case', (ctx) => {
-    ctx.body = '案例'
-})
+
 
 router.get('/connect', (ctx) => {
     ctx.body = '联系我们'

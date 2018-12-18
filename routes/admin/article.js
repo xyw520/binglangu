@@ -30,14 +30,13 @@ router.get('/', async (ctx) => {
     var pageSize = 5;
 
     var result = await DB.find('article', {}, {}, {
-        'page': page, 'pageSize': pageSize, sort: {
-            'add_time': -1
+        'page': page, 'pageSize': pageSize,  sortJson:{
+            'add_time':-1
         }
     });
 
 
     var count = await DB.count('article', {});
-
 
     // ctx.body='articlecate'
     await ctx.render('admin/article/index', {
@@ -98,6 +97,8 @@ router.post('/doEdit', upload.single('img_url'), async (ctx) => {
     let description = ctx.req.body.description || '';
     let content = ctx.req.body.content || '';
     let img_url = ctx.req.file ? ctx.req.file.path.substr(7) : '';
+
+    img_url=img_url.replace(/\\/g, "/");    //正则替换 
 
     let add_time = tools.getTime();
     //属性的简写
@@ -185,7 +186,6 @@ router.post('/doAdd', upload.single('img_url'), async (ctx) => {
 })
 
 router.get('/ueditor', async (ctx) => {
-
 
     // ctx.body='ue';
     // return;

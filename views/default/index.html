@@ -5,7 +5,7 @@
     {{include 'default/inc/header.html'}}
 
     <link rel="stylesheet" href="{{__HOST__}}/default/css/index.css">
-   
+
     <!-- 首页轮播需要 -->
     <link rel="stylesheet" href="{{__HOST__}}/default/css/jqSangar/sangarSlider.css" type="text/css">
     <link rel="stylesheet" href="{{__HOST__}}/default/css/jqSangar/default.css" type="text/css">
@@ -33,7 +33,7 @@
 
                     {{each focus}}
                     <div class='sangar-content'>
-                        <img src='{{$value.pic}}' alt="{{$value.title}}"/>
+                        <img src='{{$value.pic}}' alt="{{$value.title}}" />
                         <a href='{{$value.url}}' target="_blank"></a>
                         <div class="sangar-textbox">
                             <div class="sangar-textbox-inner sangar-position-bottom">
@@ -85,7 +85,7 @@
                             {{each article[0]}}
                             <div class="column ">
                                 <div>
-                                    <a href="">
+                                    <a href="/info/{{@$value._id}}">
                                         <figure class="image is-5by3">
                                             <img src="{{$value.img_url}}">
                                         </figure>
@@ -104,8 +104,8 @@
                     </div>
 
                     <div class="btnWrap">
-                        <a href="">
-                            <button class="mbtn">查看更多</button>
+                        <a href="/hotel">
+                            <button class="mbtn">查看更多  </button>
                         </a>
                         &nbsp;
                         <a>
@@ -117,7 +117,7 @@
 
             </div>
 
-            <!-- 特色农家乐 -->
+            <!-- 特色美食 -->
             <div class="case">
 
                 <div class="container is-fluid">
@@ -140,10 +140,11 @@
                     <div class="columnWrap1">
 
                         <div class="columns ">
-                                {{each article[1]}}
+                            {{each article[1]}}
+                            {{if $index<3}}
                             <div class="column ">
                                 <div>
-                                    <a href="">
+                                    <a href="/info/{{@$value._id}}">
                                         <figure class="image is-5by4">
                                             <img src="{{$value.img_url}}">
 
@@ -157,14 +158,39 @@
                                     </div>
                                 </div>
                             </div>
+                            {{/if}}
                             {{/each}}
 
                         </div>
 
+                        <div class="columns ">
+                                {{each article[1]}}
+                                {{if $index>2&&$index<6}}
+                                <div class="column ">
+                                    <div>
+                                        <a href="/info/{{@$value._id}}">
+                                            <figure class="image is-5by4">
+                                                <img src="{{$value.img_url}}">
+    
+                                            </figure>
+    
+                                        </a>
+    
+                                        <div class="title-wrap">
+                                            <a href="" class="title">{{$value.title}}</a>
+                                            <div class="description"> {{$value.description}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/if}}
+                                {{/each}}
+    
+                            </div>
+
                     </div>
 
                     <div class="btnWrap">
-                        <a href="">
+                        <a href="/food">
                             <button class="mbtn">查看更多</button>
                         </a>
                     </div>
@@ -207,14 +233,17 @@
                     <div class="columnWrap3">
 
                         <div class="columns ">
-                            {{each article[3]}}
-                            <div class="column ">
+
+                            {{each article[3]}} {{if $index
+                            <2}} <div class="column">
+
                                 <div class="card">
                                     <div class="card-image">
                                         <figure class="image is-4by3">
                                             <img src="{{$value.img_url}}" alt="Placeholder image">
                                         </figure>
                                     </div>
+
                                     <div class="card-content">
                                         <div class="media">
 
@@ -225,68 +254,81 @@
                                         </div>
 
                                         <div class="content">
-                                                {{$value.description}}
-                                            <a>查看详情</a>
+                                            {{$value.description}}
+                                            <a href="/info/{{@$value._id}}">查看详情</a>
                                             <br>
                                             <time datetime="2016-1-1">{{$value.add_time | dateFormat}} </time>
                                         </div>
                                     </div>
+
                                 </div>
-                            </div>
-
-                            {{/each}}
-                           
 
                         </div>
-
-                        
-
-                        <div class="btnWrap">
-                            <a href="">
-                                <button class="mbtn">查看更多</button>
-                            </a>
-                        </div>
-
+                        {{/if}} {{/each}}
                     </div>
 
+                    <div class="columns ">
 
+                        {{each article[3]}} {{if $index>1&&$index
+                        <4}} <div class="column">
+
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="{{$value.img_url}}" alt="Placeholder image">
+                                    </figure>
+                                </div>
+
+                                <div class="card-content">
+                                    <div class="media">
+
+                                        <div class="media-content">
+                                            <p class="title is-4">{{$value.title}}</p>
+                                            <p class="subtitle is-6">编辑：{{$value.author}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        {{$value.description}}
+                                        <a href="/info/{{@$value._id}}">查看详情</a>
+                                        <br>
+                                        <time datetime="2016-1-1">{{$value.add_time | dateFormat}} </time>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                    </div>
+                    {{/if}} {{/each}}
                 </div>
+
             </div>
 
 
-        {{include 'default/inc/footer.html'}}
 
-            <div class="modal" id='orderInfo'>
-                <div class="modal-background"></div>
-                <div class="modal-content">
-                    <p class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
-                    </p>
-                    <p style='color: #ffffff;text-align: center'>
-                        扫描二维码添加微信，私聊老板预约房间
-                    </p>
-                    <p style='color: #ffffff;text-align: center'>
-                        联系电话：18874408888
-                    </p>
-                </div>
-                <button class="modal-close is-large" aria-label="close"></button>
+            <div class="btnWrap">
+                <a href="/gonglue">
+                    <button class="mbtn">查看更多</button>
+                </a>
             </div>
-
-            <!-- <div class="mobile-nav">
-            <div>
-                <div class="navitem">1</div>
-                <div class="navitem">2</div>
-                <div class="navitem">3</div>
-                <div class="navitem">4</div>
-            </div>
-      </div> -->
-
-
-
 
         </div>
 
-        {{include 'default/inc/mobile-nav.html'}}
+
+    </div>
+    {{include 'default/inc/footer.html'}}
+    </div>
+
+
+
+
+
+      {{include 'default/inc/mobile-nav.html'}}
+
+
+    </div>
+
+   
 
     </div>
 
@@ -350,13 +392,7 @@
         }
     });
 
-    function orderRoom() {
-        document.getElementById('orderInfo').classList.add("is-active")
-    }
-
-    document.querySelector('.modal-close').addEventListener('click', function () {
-        this.parentNode.classList.remove("is-active")
-    })
+   
 
 </script>
 

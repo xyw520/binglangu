@@ -1,3 +1,20 @@
+<div class="modal" id='orderInfo'>
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <p class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
+            </p>
+            <p style='color: #ffffff;text-align: center'>
+                扫描二维码添加微信，私聊老板预约房间
+            </p>
+            <p style='color: #ffffff;text-align: center'>
+                联系电话：18874408888
+            </p>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+
 <div class="fo">
     <div class="container is-fluid">
         <div class="columns is-desktop">
@@ -41,3 +58,16 @@
 
     </div>
 </div>
+
+<script>
+
+     function orderRoom() {
+        document.getElementById('orderInfo').classList.add("is-active")
+    }
+
+    document.querySelector('.modal-close').addEventListener('click', function () {
+        console.log(111)
+        this.parentNode.classList.remove("is-active")
+    })
+
+</script>
