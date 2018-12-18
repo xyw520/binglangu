@@ -133,7 +133,7 @@ router.get('/info/:id', async (ctx) => {
 
     let content = await DB.find('article', { '_id': DB.getObjectId(id) });
 
-    console.log("content:" + JSON.stringify(content))
+    // console.log("content:" + JSON.stringify(content))
 
     //获取当前文章的分类信息
     var cateResult = await DB.find('articlecate', { '_id': DB.getObjectId(content[0].pid) });
@@ -156,8 +156,6 @@ router.get('/info/:id', async (ctx) => {
     } else {
         ctx.state.pathname = '/'
     }
-
-
 
 
     ctx.render('default/info', {

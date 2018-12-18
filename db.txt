@@ -13,3 +13,23 @@
 
 
 mongoimport -d admin -c link2 --type json --file C:\Users\Administrator\Desktop\gitdemo\binglangu\db\link.json
+
+
+cd µ½ C:\Program Files\MongoDB\Server\4.0\bin
+
+mongoexport -d admin -c article -o D:\data\exportDB\binglanggu\article.json
+
+mongoexport -d admin -c nav -o D:\data\exportDB\binglanggu\nav.json 
+
+mongoexport -d admin -c articlecate -o D:\data\exportDB\binglanggu\articlecate.json 
+
+mongoexport -d admin -c focus -o D:\data\exportDB\binglanggu\focus.json 
+
+mongoexport -d admin -c link -o D:\data\exportDB\binglanggu\link.json 
+
+mongoexport -d admin -c setting -o D:\data\exportDB\binglanggu\setting.json  
+
+mongoexport -d admin -c user -o D:\data\exportDB\binglanggu\user.json 
+
+mongoexport -d admin -c setting -o D:\data\exportDB\binglanggu\setting.json  
+
