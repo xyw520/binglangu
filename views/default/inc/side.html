@@ -6,7 +6,7 @@
             </div>
             {{each recommend}}
             <div>
-                <a href="info/{{@$value._id}}">{{$value.title}}</a>
+                <a href="{{__HOST__}}/info/{{@$value._id}}">{{$value.title}}</a>
             </div>
             {{/each}}
         </div>

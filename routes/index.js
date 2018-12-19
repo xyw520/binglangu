@@ -8,9 +8,15 @@ router.use(async (ctx, next) => {
 
     ctx.state.__HOST__ = 'http://' + ctx.request.header.host;
 
-    ctx.state.nav = await DB.find('nav', { $or: [{ "status": "1" }, { "status": 1 }] }, {}, {
+    // ctx.state.nav = await DB.find('nav', { $or: [{ "status": "1" }, { "status": 1 }] }, {}, {
+    //     sortJson: { 'sort': 1 }
+    // });
+
+    ctx.state.nav = await DB.find('articlecate', { $or: [{ "status": "1" }, { "status": 1 }],$or: [{ "is_nav": "1" }, { "is_nav": 1 }]}, {}, {
         sortJson: { 'sort': 1 }
     });
+
+    console.log(ctx.state.nav)
 
     ctx.state.recommend=await DB.find('article',{ $or: [{ "status": "1" }, { "status": 1 }],$or: [{ "is_best": "1" }, { "is_best": 1 }] },{'title':1}) 
 
@@ -38,13 +44,20 @@ router.get('/', async (ctx) => {
 
     var articleResult = []
 
-    for (let i = 0; i < 4; i++) {
+    console.log("articleCateResult.len:"+articleCateResult.length)
+
+    for (let i = 0; i < articleCateResult.length; i++) {
         // console.log("i:" + i);
-        // console.log("articleCateResult" + articleCateResult)
-        articleResult[i] = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': (articleCateResult[i]._id).toString() }, {}, {
+        // console.log(i+":"+ articleCateResult[i]._id)
+        //如果没有查询到文章分类（文章分类显示被关闭）
+        // if(articleCateResult)
+
+        articleResult[i] = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': (articleCateResult[i]._id).toString() },{'title':1,'add_time':1,'description':1,'author':1,'img_url':1}, {
             sortJson: { 'sort': 1 }
         });
-        // console.log(" articleResult[i]:" + JSON.stringify(articleResult[i]))
+
+        // console.log(articleResult[i])
+
     }
 
 

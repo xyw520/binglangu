@@ -7,8 +7,6 @@ var tools = require('../../model/tools');
 
 router.get('/', async (ctx) => {
 
-
-
     var result = await DB.find('articlecate', {});
 
     // ctx.body='articlecate'

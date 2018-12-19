@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +61,7 @@
             </div>
 
 
-
+            <!-- 精品酒店 -->
             <div class="case2 wrapBg">
                 <div class="container is-fluid ">
                     <div class="titleWrap">
@@ -212,18 +213,19 @@
                 </div>
             </section>
 
+              <!-- 攻略大全   -->
             <div class="case3">
                 <div class="container is-fluid ">
                     <div class="titleWrap">
                         <nav class="level">
                             <p class="level-item has-text-centered">
-                                <a class="title link is-info">{{cate[3].title}}</a>
+                                <a class="title link is-info">{{cate[2].title}}</a>
                             </p>
                         </nav>
                         <nav class="level">
                             <p class="level-item has-text-centered">
                                 <a class="subtitle link is-info flex">
-                                    <i></i>{{cate[3].description}}
+                                    <i></i>{{cate[2].description}}
                                     <i></i>
                                 </a>
                             </p>
@@ -234,7 +236,7 @@
 
                         <div class="columns ">
 
-                            {{each article[3]}} {{if $index
+                            {{each article[2]}} {{if $index
                             <2}} <div class="column">
 
                                 <div class="card">
@@ -269,7 +271,7 @@
 
                     <div class="columns ">
 
-                        {{each article[3]}} {{if $index>1&&$index
+                        {{each article[2]}} {{if $index>1&&$index
                         <4}} <div class="column">
 
                             <div class="card">
@@ -305,7 +307,6 @@
             </div>
 
 
-
             <div class="btnWrap">
                 <a href="/gonglue">
                     <button class="mbtn">查看更多</button>
@@ -318,9 +319,6 @@
     </div>
     {{include 'default/inc/footer.html'}}
     </div>
-
-
-
 
 
       {{include 'default/inc/mobile-nav.html'}}

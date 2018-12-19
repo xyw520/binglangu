@@ -93,14 +93,46 @@ router.get('/changeStatus', async (ctx) => {
 
 router.get('/del', async (ctx) => {
 
-
     try {
+
         var collectionName = ctx.query.collection;
         var id = ctx.query.id;
+
+        console.log("collectionName:"+collectionName)
+        console.log("id:"+id)
 
         var result = await DB.remove(collectionName, { "_id": DB.getObjectId(id) });
 
         await ctx.redirect(ctx.state.G.prevPage);   //因为是公共的方法，所以需要从哪儿来到哪儿去
+
+    } catch (error) {
+        await ctx.redirect(ctx.state.G.prevPage);
+    }
+
+})
+
+router.get('/delnav', async (ctx) => {
+
+    try {
+
+        var collectionName = ctx.query.collection;
+        var id = ctx.query.id;
+
+        console.log("collectionName:"+collectionName)
+        console.log("id:"+id)
+
+        var result = await DB.remove(collectionName, { "_id": DB.getObjectId(id) });
+
+        if (result) {
+            console.log('删除成功')
+            ctx.body = { "message": "删除成功", "success": true }
+        } else {
+            console.log('删除失败')
+            ctx.body = { "message": "删除失败", "success": false }
+        }
+
+        // await ctx.redirect(ctx.state.G.prevPage);   //因为是公共的方法，所以需要从哪儿来到哪儿去
+
     } catch (error) {
         await ctx.redirect(ctx.state.G.prevPage);
     }

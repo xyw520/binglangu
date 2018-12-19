@@ -26,8 +26,33 @@ var app={
     changeSort(el,collectionName,id){
         var sortvalue=el.value;
         $.get('/admin/changeSort',{collectionName:collectionName,id:id,sortvalue},function(data){
-           console.log("data:"+data)
+           console.log(data)
         })
+    },
+    delnav(el,collectionName,id,is_sys){
+
+        if(is_sys==1){
+            alert('系统默认分类，不可删除');
+            return;
+        }
+
+        var flag=confirm('确定删除？');
+
+        if(flag){
+
+
+            $.get('/admin/delnav',{collection:collectionName,id:id},function(data){
+                console.log(data);
+                if(data.success){
+                    window.location.reload();
+                    // window.history.go(0)
+                }
+             })
+             
+        }
+
+       
+
     }
 }
 
