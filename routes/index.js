@@ -12,10 +12,9 @@ router.use(async (ctx, next) => {
         sortJson: { 'sort': 1 }
     });
 
+    ctx.state.recommend=await DB.find('article',{ $or: [{ "status": "1" }, { "status": 1 }],$or: [{ "is_best": "1" }, { "is_best": 1 }] },{'title':1}) 
+
     ctx.state.pathname = url.parse(ctx.request.url).pathname.substring(1);
-
-
-    console.log(" ctx.state.__HOST__:" + ctx.state.__HOST__);
 
     await next();
 })
@@ -40,16 +39,16 @@ router.get('/', async (ctx) => {
     var articleResult = []
 
     for (let i = 0; i < 4; i++) {
-        console.log("i:" + i);
-        console.log("articleCateResult[i].title" + articleCateResult[i].title)
+        // console.log("i:" + i);
+        // console.log("articleCateResult" + articleCateResult)
         articleResult[i] = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': (articleCateResult[i]._id).toString() }, {}, {
             sortJson: { 'sort': 1 }
         });
-        console.log(" articleResult[i]:" + JSON.stringify(articleResult[i]))
+        // console.log(" articleResult[i]:" + JSON.stringify(articleResult[i]))
     }
 
 
-    console.log("articleResult:" + JSON.stringify(articleResult))
+    // console.log("articleResult:" + JSON.stringify(articleResult))
     console.timeEnd('start')
 
     ctx.render('default/index', {
@@ -70,7 +69,7 @@ router.get('/gonglue', async (ctx) => {
     //     sortJson:{'sort':1}
     // });
 
-    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062de0e5c96b23843576d0' }, {}, {
+    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062de0e5c96b23843576d0' }, {'title':1,'add_time':1,'description':1,'author':1,'img_url':1}, {
         sortJson:{
             'sort':1
         }
@@ -88,7 +87,7 @@ router.get('/gonglue', async (ctx) => {
 })
 
 router.get('/hotel',async (ctx) => {
-    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062d89e5c96b23843576cd' }, {}, {
+    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062d89e5c96b23843576cd' }, {'title':1,'add_time':1,'description':1,'author':1,'img_url':1}, {
         sortJson:{
             'sort':1
         }
@@ -102,7 +101,7 @@ router.get('/hotel',async (ctx) => {
 })
 
 router.get('/food',async (ctx) => {
-    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062daae5c96b23843576ce' }, {}, {
+    let articleGonglue = await DB.find('article', { $or: [{ "status": "1" }, { "status": 1 }], 'pid': '5c062daae5c96b23843576ce' }, {'title':1,'add_time':1,'description':1,'author':1,'img_url':1}, {
         sortJson:{
             'sort':1
         }

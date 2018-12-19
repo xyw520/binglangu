@@ -10,6 +10,7 @@ var ueditor=require('koa2-ueditor');
 var focus=require('./admin/focus');
 var link=require('./admin/link');
 var nav=require('./admin/nav');
+var recommend=require('./admin/recommend');
 var setting=require('./admin/setting');
 var url = require('url')
 
@@ -63,6 +64,7 @@ router.use('/article', article);
 router.use('/focus', focus);
 router.use('/link', link);
 router.use('/nav', nav);
+router.use('/recommend', recommend);
 router.use('/setting', setting);
 
 router.all('/editor/controller', ueditor(['statics', {

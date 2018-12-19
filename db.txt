@@ -14,6 +14,20 @@
 
 mongoimport -d admin -c link2 --type json --file C:\Users\Administrator\Desktop\gitdemo\binglangu\db\link.json
 
+mongoimport -d admin -c article --type json --file C:\website\binglangu\db\article.json
+
+mongoimport -d admin -c article --type json --file C:\website\binglangu\db\articlecate.json
+
+mongoimport -d admin -c focus --type json --file C:\website\binglangu\db\focus.json
+
+mongoimport -d admin -c link --type json --file C:\website\binglangu\db\link.json
+
+mongoimport -d admin -c nav --type json --file C:\website\binglangu\db\nav.json
+
+mongoimport -d admin -c setting --type json --file C:\website\binglangu\db\setting.json
+
+mongoimport -d admin -c user --type json --file C:\website\binglangu\db\user.json
+
 
 cd µ½ C:\Program Files\MongoDB\Server\4.0\bin
 
