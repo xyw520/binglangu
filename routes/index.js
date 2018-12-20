@@ -16,7 +16,10 @@ router.use(async (ctx, next) => {
         sortJson: { 'sort': 1 }
     });
 
-    console.log(ctx.state.nav)
+    ctx.state.setting=await DB.find('setting',{});
+    ctx.state.setting=(ctx.state.setting)[0]
+
+    // console.log(ctx.state.setting)
 
     ctx.state.recommend=await DB.find('article',{ $or: [{ "status": "1" }, { "status": 1 }],$or: [{ "is_best": "1" }, { "is_best": 1 }] },{'title':1}) 
 
@@ -128,7 +131,6 @@ router.get('/food',async (ctx) => {
 })
 
 router.get('/about', (ctx) => {
-    console.log("ctx.params:" + JSON.stringify(ctx.query))
     ctx.body = '关于我们'
 })
 
@@ -139,7 +141,6 @@ router.get('/connect', (ctx) => {
 })
 
 router.get('/info/:id', async (ctx) => {
-    console.log("ctx.params:" + JSON.stringify(ctx.params));
 
     let id = ctx.params.id;
 

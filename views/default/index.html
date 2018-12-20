@@ -7,25 +7,17 @@
 
     <link rel="stylesheet" href="{{__HOST__}}/default/css/index.css">
 
-    <!-- 首页轮播需要 -->
+     <!-- 首页轮播需要 -->
     <link rel="stylesheet" href="{{__HOST__}}/default/css/jqSangar/sangarSlider.css" type="text/css">
     <link rel="stylesheet" href="{{__HOST__}}/default/css/jqSangar/default.css" type="text/css">
-
-    <!-- <script type="text/javascript" src="js/jquery-migrate.min.js"></script> -->
-    <script type="text/javascript" src="{{__HOST__}}/default/js/jquery.touchSwipe.min.js"></script>
-    <script type="text/javascript" src="{{__HOST__}}/default/js/imagesloaded.min.js"></script>
-    <script type="text/javascript" src="{{__HOST__}}/default/js/sangarSlider.js"></script>
-    <!-- 首页轮播需要 -->
-
-    <title>index</title>
 
 </head>
 
 <body>
 
-    <div class='page'>
+    <div class='page' >
 
-        <div class='pagecontent'>
+        <div class='pagecontent' id='imgcontainer'>
 
             {{include 'default/inc/nav.html'}}
 
@@ -52,9 +44,9 @@
 
                     <div class='sangar-content'>
                         <video class="sangar-slide-video" style="width:100%;" preload="none">
-                            <source src="default/video/b.mp4" type="video/mp4"> 你的浏览器不支持 HTML5 video.
+                            <source src="https://apd-7c814d41446264c5585096b1c6d842c9.v.smtcdns.com/om.tc.qq.com/AVkVfpxcmR07UnMvUGUjCLM9_QJL_rTMXlQBX005o57g/uwMRJfz-r5hgYaQXGdGnCwQsKf_dEsnq3UJztMoyPd8/z03958y8ux2.p709.1.mp4?sdtfrom=v1010&guid=e075e2641bedb922a9de3d2f506e390b&vkey=3FDE604B77F460D9244047E7E637F614B96593A5F72983212812885BB02BC5FA67CB7A75A320D81812CAE54493E5F56DA3BED200175DE0835A970769AE4DF89E35F85A802D1DF1CC16DA3B2D1ACAFA04F4247C49E34DE135185AF958A86622EDA23ADC8B5E35A590C20671579E8DF7139193B9AA637F8B60#t=4" type="video/mp4"> 你的浏览器不支持 HTML5 video.
                         </video>
-                        <a href='http://github.com'></a>
+                        <a ></a>
                     </div>
 
                 </div>
@@ -88,7 +80,7 @@
                                 <div>
                                     <a href="/info/{{@$value._id}}">
                                         <figure class="image is-5by3">
-                                            <img src="{{$value.img_url}}">
+                                                <img class="lazy-load"  data-original="{{$value.img_url}}">
                                         </figure>
                                     </a>
                                 </div>
@@ -138,7 +130,7 @@
                         </nav>
                     </div>
 
-                    <div class="columnWrap1">
+                    <div class="columnWrap1" >
 
                         <div class="columns ">
                             {{each article[1]}}
@@ -147,7 +139,7 @@
                                 <div>
                                     <a href="/info/{{@$value._id}}">
                                         <figure class="image is-5by4">
-                                            <img src="{{$value.img_url}}">
+                                            <img class="lazy-load"  data-original="{{$value.img_url}}">
 
                                         </figure>
 
@@ -171,7 +163,7 @@
                                     <div>
                                         <a href="/info/{{@$value._id}}">
                                             <figure class="image is-5by4">
-                                                <img src="{{$value.img_url}}">
+                                                    <img class="lazy-load"  data-original="{{$value.img_url}}">
     
                                             </figure>
     
@@ -242,7 +234,7 @@
                                 <div class="card">
                                     <div class="card-image">
                                         <figure class="image is-4by3">
-                                            <img src="{{$value.img_url}}" alt="Placeholder image">
+                                                <img class="lazy-load"  data-original="{{$value.img_url}}">
                                         </figure>
                                     </div>
 
@@ -277,7 +269,7 @@
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
-                                        <img src="{{$value.img_url}}" alt="Placeholder image">
+                                            <img class="lazy-load"  data-original="{{$value.img_url}}">
                                     </figure>
                                 </div>
 
@@ -394,7 +386,18 @@
 
 </script>
 
+
+ <!-- <script type="text/javascript" src="js/jquery-migrate.min.js"></script> -->
+ <script type="text/javascript" src="{{__HOST__}}/default/js/jquery.touchSwipe.min.js"></script>
+ <script type="text/javascript" src="{{__HOST__}}/default/js/imagesloaded.min.js"></script>
+ <script type="text/javascript" src="{{__HOST__}}/default/js/sangarSlider.js"></script>
+ <!-- 首页轮播需要 -->
+ 
+
+
+
 <script>
+
     jQuery(document).ready(function ($) {
         $('#sangar-example').sangarSlider({
             timer: false, // true or false to have the timer
@@ -404,7 +407,11 @@
             scaleSlide: true // s
 
         });
+
+          
     })
 </script>
+
+
 
 </html>

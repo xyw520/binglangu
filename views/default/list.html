@@ -4,7 +4,6 @@
 <head>
     {{include 'default/inc/header.html'}}
 
-    <title>list</title>
     <style>
 
         @media (min-width: 768px) {
@@ -46,7 +45,7 @@
 
     <div class='page'>
 
-        <div class='pagecontent'>
+        <div class='pagecontent' id='imgcontainer'>
             {{include 'default/inc/nav.html'}}
 
 
@@ -71,7 +70,7 @@
                                         <div class="card">
                                             <div class="card-image">
                                                 <figure class="image is-4by3">
-                                                    <img src="{{$value.img_url}}" alt="{{$value.title}}">
+                                                    <img class="lazy-load"  data-original="{{$value.img_url}}" alt="{{$value.title}}">
                                                 </figure>
                                             </div>
                                             <div class="card-content">
@@ -103,23 +102,11 @@
                 </div>
 
             </div> </div>
-
             {{include 'default/inc/footer.html'}}
-
-
         </div>
-
-       
         
         {{include 'default/inc/mobile-nav.html'}}
-
-       
     </div>
-
-
-
-
-
 </body>
 
 </html>
